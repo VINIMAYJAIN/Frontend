@@ -1,10 +1,10 @@
-// Data Initialization
+
 document.addEventListener('DOMContentLoaded', () => {
     displayUsers();
     displayProducts();
   });
   
-  // Display Users
+
   function displayUsers() {
     const userList = document.getElementById('userList');
     userList.innerHTML = '';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Display Products
+  
   function displayProducts() {
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       productList.appendChild(li);
     });
   }
-  
-  // Add New User
+
   document.getElementById('addUserBtn').addEventListener('click', () => {
     const formContainer = document.getElementById('formContainer');
     formContainer.innerHTML = `
@@ -42,8 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('userForm').addEventListener('submit', addUser);
   });
   
-  // Add User Function
-  // Add User Function
+  
 function addUser(e) {
     e.preventDefault();
     const name = document.getElementById('userName').value;
@@ -56,16 +54,16 @@ function addUser(e) {
     };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-    displayUsers(); // Update the user list display
+    displayUsers(); 
   }
-  // Delete User
+
 function deleteUser(id) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const updatedUsers = users.filter(u => u.id !== id);
     localStorage.setItem('users', JSON.stringify(updatedUsers));
-    displayUsers(); // Update the user list display
+    displayUsers(); 
   }
-// Edit User
+
 function editUser(id) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userIndex = users.findIndex(u => u.id === id);
@@ -76,13 +74,13 @@ function editUser(id) {
         users[userIndex].name = name;
         users[userIndex].email = email;
         localStorage.setItem('users', JSON.stringify(users));
-        displayUsers(); // Update the user list display
+        displayUsers(); 
       }
     } else {
       alert('User not found!');
     }
   }
-// View User Details
+
 function viewUser(id) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(u => u.id === id);
@@ -94,7 +92,7 @@ function viewUser(id) {
   }
       
    
-  // Add New Product
+
 document.getElementById('addProductBtn').addEventListener('click', () => {
     const formContainer = document.getElementById('formContainer');
     formContainer.innerHTML = `
@@ -108,7 +106,7 @@ document.getElementById('addProductBtn').addEventListener('click', () => {
     document.getElementById('productForm').addEventListener('submit', addProduct);
   });
   
-  // Add Product Function
+ 
   function addProduct(e) {
     e.preventDefault();
     const name = document.getElementById('productName').value;
@@ -121,9 +119,9 @@ document.getElementById('addProductBtn').addEventListener('click', () => {
     };
     products.push(newProduct);
     localStorage.setItem('products', JSON.stringify(products));
-    displayProducts(); // Update the product list display
+    displayProducts(); 
   }
-  // Display Products
+
 function displayProducts() {
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
@@ -135,7 +133,7 @@ function displayProducts() {
     });
   } 
 
-  // View Product Details
+
 function viewProduct(id) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const product = products.find(p => p.id === id);
@@ -146,7 +144,7 @@ function viewProduct(id) {
     }
   }
   
-  // Edit Product
+ 
 function editProduct(id) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const productIndex = products.findIndex(p => p.id === id);
@@ -157,13 +155,13 @@ function editProduct(id) {
         products[productIndex].name = name;
         products[productIndex].price = price;
         localStorage.setItem('products', JSON.stringify(products));
-        displayProducts(); // Update the product list display
+        displayProducts(); 
       }
     } else {
       alert('Product not found!');
     }
   }
-// Edit Product
+
 function editProduct(id) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const productIndex = products.findIndex(p => p.id === id);
@@ -174,18 +172,18 @@ function editProduct(id) {
         products[productIndex].name = name;
         products[productIndex].price = price;
         localStorage.setItem('products', JSON.stringify(products));
-        displayProducts(); // Update the product list display
+        displayProducts(); 
       }
     } else {
       alert('Product not found!');
     }
   }
-// Delete Product
+
 function deleteProduct(id) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const updatedProducts = products.filter(p => p.id !== id);
     localStorage.setItem('products', JSON.stringify(updatedProducts));
-    displayProducts(); // Update the product list display
+    displayProducts(); 
   }
       
   

@@ -4,20 +4,17 @@
     box-sizing: border-box;
   }
   
-  /* Body Styling */
   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
   }
   
-  /* Container for centering content */
   .container {
     width: 80%;
     margin: 0 auto;
   }
   
-  /* Header Styling */
   header {
     background-color: #333;
     color: #fff;
@@ -48,13 +45,11 @@
     font-weight: bold;
   }
   
-  /* Main Content Styling */
   main {
     display: flex;
     justify-content: space-between;
   }
   
-  /* Section Styling */
   section {
     background-color: #fff;
     padding: 20px;
